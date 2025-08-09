@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Congrats, My Love — Graduation Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #fff1f6;
+      --bg2: #fff7fb;
+      --accent: #ff6b8a;
+      --accent-dark: #d04763;
+      --text: #3b2f2f;
+      --muted: #6b5a5a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: radial-gradient(1200px 600px at 10% 10%, var(--bg1), transparent 20%),
+                  radial-gradient(900px 500px at 90% 90%, var(--bg2), transparent 20%),
+                  linear-gradient(180deg,#fff 0%, #fffefc 100%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--text);
+      padding:32px;
+      perspective: 1000px;
+    }
+    .card{
+      width:100%;
+      max-width:900px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+      border-radius:20px;
+      padding:36px;
+      box-shadow: 0 15px 40px rgba(171,110,126,0.25), inset 0 1px 0 rgba(255,255,255,0.6);
+      border:1px solid rgba(214,150,162,0.25);
+      position:relative;
+      overflow:hidden;
+      transform: rotateY(-3deg) rotateX(1deg);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+    .card:hover{
+      transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+      box-shadow: 0 20px 50px rgba(171,110,126,0.35);
+    }
+    .ribbon{
+      position:absolute;
+      right:-55px;
+      transform:rotate(30deg);
+      background: linear-gradient(90deg,var(--accent), var(--accent-dark));
+      color:white;
+      padding:10px 120px;
+      font-family:'Playfair Display', serif;
+      font-size:20px;
+      box-shadow:0 8px 18px rgba(208,71,99,0.18);
+      letter-spacing:1px;
+    }
+    header{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      margin-bottom:8px;
+    }
+    .icon-container{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+      transform: translateZ(30px);
+    }
+    .heart, .bouquet{
+      width:64px;height:64px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, #fff, rgba(255,255,255,0.6));
+      box-shadow:0 6px 18px rgba(255,107,138,0.25);
+      border:1px solid rgba(255,107,138,0.15);
+      transform: translateZ(20px);
+    }
+    .heart svg, .bouquet svg{
+      width:38px;height:38px;
+      filter: drop-shadow(0 3px 3px rgba(0,0,0,0.15));
+    }
+    h1{
+      font-family:'Dancing Script', cursive;
+      margin:0;
+      font-size:26px;
+      color:var(--accent-dark);
+      text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    }
+    .subtitle{font-size:14px;color:var(--muted);margin-top:4px}
+    .message{
+      margin-top:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+      padding:24px;
+      border-radius:12px;
+      border:1px dashed rgba(218,150,162,0.18);
+      transform: translateZ(15px);
+    }
+    .message p{margin:0 0 12px 0;line-height:1.6;font-size:16px; font-family:'Dancing Script', cursive;}
+    .message p.lead{font-size:18px;font-weight:600;color:var(--accent-dark)}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+    .meta .left{font-size:14px;color:var(--muted)}
+    .meta .right{font-family:'Brush Script MT', 'Lucida Handwriting';color:var(--accent-dark);font-weight:700; font-size:25px}
+    .footer{
+      margin-top:22px;
+      text-align:center;
+      font-size:13px;color:var(--muted)
+    }
+    @media print{
+      body{padding:0}
+      .card{box-shadow:none;border:none;transform:none}
+      .ribbon{display:none}
+    }
+    @keyframes pulse {
+      0%{transform:scale(1)}
+      50%{transform:scale(1.06)}
+      100%{transform:scale(1)}
+    }
+    .heart svg{animation:pulse 2.6s ease-in-out infinite}
+    @media (max-width:520px){
+      .ribbon{display:none}
+      header{gap:12px}
+      .heart, .bouquet{width:54px;height:54px}
+      h1{font-size:20px}
+    }
+    .music-player {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.music-player {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#music-toggle {
+  background: var(--accent);
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255,107,138,0.3);
+}
+
+#music-toggle:hover {
+  background: var(--accent-dark);
+}
+
+  </style>
+</head>
+<body>
+  <article class="card">
+    <div class="ribbon">You did it!</div>
+
+    <header>
+      <div class="icon-container">
+        <div class="heart" aria-hidden>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <path d="M12 20s-7.5-4.9-9.2-7.1C-0.1 8.6 3.3 4 7.7 5.8 9.6 6.6 11 8.1 12 9.2c1-1.1 2.4-2.6 4.3-3.4 4.4-1.8 7.8 2.8 4.9 7.1C19.5 15.1 12 20 12 20z" fill="url(#g)" opacity="0.95"/>
+            <defs>
+              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#ff8aa0"/>
+                <stop offset="100%" stop-color="#ff5372"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="bouquet" aria-hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+            <circle cx="20" cy="16" r="6" fill="#ff7b9c"/>
+            <circle cx="32" cy="8" r="6" fill="#ffb3c7"/>
+            <circle cx="44" cy="16" r="6" fill="#ff7b9c"/>
+            <path d="M32 14v36" stroke="#6b8e23" stroke-width="3"/>
+            <path d="M24 26l8 12 8-12" stroke="#6b8e23" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <h1>To my dearest <span id="recipient-name">[CHE]</span>,</h1>
+        <div class="subtitle">Congratulations on your graduation. A thousand tiny steps brought you here.</div>
+      </div>
+      
+    </header>
+
+    <section class="message">
+      <p class="lead">You've made us so proud.</p>
+      <p>My love, I thank God for you and the journey He has brought you through. Your perseverance, grace, and many late-night cups of coffee finally led you here. In the book of Philippians 1:6, which says, “He who began a good work in you will carry it on to completion until the day of Christ Jesus.” 
+        God started this beautiful work in you, and today is proof that He is faithful. This graduation is not just an achievement  it's a testimony of His guidance, strength, and unfailing love.</p>
+      <p>May this milestone open doors to dreams you haven't dared yet. Celebrate every little victory, and remember I'll be cheering for you on every step of the next journey. Congratulations, Che. You've made me proud, and more importantly, you've glorified God with your victory today.</p>
+      <div class="meta">
+        <div class="left">Graduation Day: <strong id="grad-date">[August 11, 12 2025]</strong></div>
+        <div class="right">— <span id="sender-name ">[Michael]</span></div>
+      </div>
+      <div class="music-player">
+  <button id="music-toggle">🎵 Play Music</button>
+  <audio id="bg-music" loop>
+    <source src="Walk with you.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+    </section>
+
+
+ 
+
+
+<script>
+  const music = document.getElementById('bg-music');
+  const btn = document.getElementById('music-toggle');
+  let playing = false;
+
+  btn.addEventListener('click', () => {
+    if (playing) {
+      music.pause();
+      btn.textContent = '🎵 Play Music';
+    } else {
+      music.play();
+      btn.textContent = '⏸ Pause Music';
+    }
+    playing = !playing;
+  });
+</script>
+
+
+
+</body>
+</html>
